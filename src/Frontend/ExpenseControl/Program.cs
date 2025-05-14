@@ -1,7 +1,10 @@
-﻿using ExpenseControl.Services;
-using ExpenseControl.Components;
+﻿using DevExpressExpenseControl.Frontend.ExpenseControl.Services;
+using DevExpressExpenseControl.Frontend.ExpenseControl.Components;
+using DevExpressExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
+using DevExpressExpenseControl.Frontend.ExpenseControl.DI;
 
 var builder = WebApplication.CreateBuilder(args);
+IConfiguration configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -12,6 +15,10 @@ builder.Services.AddDevExpressBlazor(options => {
 });
 builder.Services.AddMvc();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+builder.AddServiceDefaults();
+builder.AddApplicationServices();
+builder.Services.AddDIOpenIddictApplication(configuration);
 
 var app = builder.Build();
 if (!app.Environment.IsDevelopment()) {

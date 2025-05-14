@@ -118,9 +118,9 @@ public class SeedIdentity(
                         Permissions.Scopes.Roles,
                         Permissions.Prefixes.Scope + "identity_scope",
                     },
-                PostLogoutRedirectUris = { 
-                    new Uri($"{configuration["Identity:Url"]}/connect/logout"), 
-                    new Uri($"{configuration["Identity:Url"]}/swagger") 
+                PostLogoutRedirectUris = {
+                    new Uri($"{configuration["Identity:Url"]}/connect/logout"),
+                    new Uri($"{configuration["Identity:Url"]}/swagger")
                 },
                 Requirements = { Requirements.Features.ProofKeyForCodeExchange }
             });
@@ -150,6 +150,34 @@ public class SeedIdentity(
                         Permissions.Prefixes.Scope + "expensecontrol_scope"
                     },
                 PostLogoutRedirectUris = { new Uri($"{configuration["ExpenseControlEndpoint"]}/swagger/") },
+                Requirements = { Requirements.Features.ProofKeyForCodeExchange }
+            });
+        }
+
+        if (await applicationManager.FindByClientIdAsync("expensecontrol_web") is null)
+        {
+            var route = new Uri($"{configuration["ExpenseControlEndpoint"]}/swagger/oauth2-redirect.html");
+            await applicationManager.CreateAsync(new OpenIddictApplicationDescriptor
+            {
+                ApplicationType = ApplicationTypes.Web,
+                ClientId = "expensecontrol_web",
+                ClientType = ClientTypes.Public,
+                DisplayName = "Expense Control Client Swagger",
+                RedirectUris = { new Uri($"{configuration["ExpenseControlWeb"]}/swagger/oauth2-redirect.html") },
+                Permissions = {
+                        Permissions.Endpoints.Token,
+                        Permissions.GrantTypes.ClientCredentials,
+                        Permissions.GrantTypes.Implicit,
+                        Permissions.GrantTypes.Password,
+                        Permissions.Endpoints.Authorization,
+                        Permissions.ResponseTypes.Token,
+                        Permissions.ResponseTypes.Code,
+                        Permissions.Scopes.Email,
+                        Permissions.Scopes.Profile,
+                        Permissions.Scopes.Roles,
+                        Permissions.Prefixes.Scope + "expensecontrol_scope"
+                    },
+                PostLogoutRedirectUris = { new Uri($"{configuration["Identity:Url"]}/connect/logout") },
                 Requirements = { Requirements.Features.ProofKeyForCodeExchange }
             });
         }

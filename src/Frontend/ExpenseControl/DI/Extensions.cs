@@ -1,4 +1,9 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.DI;
+using DevExpressExpenseControl.BuildingBlocks.Loggers;
+using DevExpressExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
+using Microsoft.IdentityModel.Logging;
+using OpenIddict.Validation.AspNetCore;
+
+namespace DevExpressExpenseControl.Frontend.ExpenseControl.DI;
 
 internal static class Extensions
 {
@@ -9,10 +14,6 @@ internal static class Extensions
 
         builder.AddServicesWritersLogger();
 
-        builder.AddSqlServerDbContext<ExpenseControlDbContext>("expencecontrolDB");
-
-        builder.EnrichSqlServerDbContext<ExpenseControlDbContext>();
-
         services.AddAuthentication(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
         services.AddAuthorization();
 
@@ -20,12 +21,12 @@ internal static class Extensions
 
         services.AddHttpContextAccessor();
         services.AddTransient(typeof(ILoggerApplicationService<>), typeof(LoggerApplicationService<>));
-        services.AddTransient<IWalletService, WalletService>();
-        services.AddTransient<IBudgetService, BudgetService>();
-        services.AddTransient<IMovementService, MovementService>();
-        services.AddTransient<ICategoryService, CategoryService>();
 
+        services.AddSingleton<IRequestProvider>(sp =>
+        {
+            var debugHttpHandler = sp.GetKeyedService<HttpMessageHandler>("DebugHttpMessageHandler");
+            return new RequestProvider(debugHttpHandler);
+        });
 
-        services.AddTransient<ExpenseControlSeed>();
     }
 }

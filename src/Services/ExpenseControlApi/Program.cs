@@ -21,19 +21,19 @@ builder.AddDefaultOpenApi(withApiVersioning);
 
 var app = builder.Build();
 
-#if DEBUG
-var scope = app.Services.CreateScope();
-var service = scope.ServiceProvider;
+if (app.Environment.IsDevelopment())
+{
+    var scope = app.Services.CreateScope();
+    var service = scope.ServiceProvider;
 
-var context = service.GetRequiredService<ExpenseControlDbContext>();
-var seed = service.GetRequiredService<ExpenseControlSeed>();
+    var context = service.GetRequiredService<ExpenseControlDbContext>();
+    var seed = service.GetRequiredService<ExpenseControlSeed>();
 
-ArgumentNullException.ThrowIfNull(context);
-await context.Database.EnsureDeletedAsync();
-await context.Database.EnsureCreatedAsync();
-await seed.SeedAsync();
-
-#endif
+    ArgumentNullException.ThrowIfNull(context);
+    await context.Database.EnsureDeletedAsync();
+    await context.Database.EnsureCreatedAsync();
+    await seed.SeedAsync();
+}
 
 var expenseControl = app.NewVersionedApi();
 

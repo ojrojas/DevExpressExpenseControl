@@ -12,9 +12,9 @@ public class MovementService(
     {
         CreateMovementResponse response = new(request.CorrelationId());
         var entity = await _context.Movements.AddAsync(request.Movement);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.MovementCreated = entity.Entity;
-        logger.LogInformation(response, $"Create movement item successful {entity.Entity.MovementType} - amount {entity.Entity.Amount}");
+        _logger.LogInformation(response, $"Create movement item successful {entity.Entity.MovementType} - amount {entity.Entity.Amount}");
         return response;
     }
 }

@@ -13,9 +13,9 @@ public class BudgetService(
     {
         CreateBudgetResponse response = new(request.CorrelationId());
         var entity = await _context.Budgets.AddAsync(request.Budget);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.BudgetCreated = entity.Entity;
-        logger.LogInformation(response, $"Create budget item successful");
+        _logger.LogInformation(response, $"Create budget item successful");
         return response;
     }
 
@@ -23,10 +23,11 @@ public class BudgetService(
     {
         DeleteBudgetResponse response = new(request.CorrelationId());
         var entity = await _context.Budgets.FindAsync(new object[] { request.Id }, cancellationToken);
+        ArgumentNullException.ThrowIfNull(entity);
         _context.Remove(entity);
-        var result = await context.SaveChangesAsync(cancellationToken);
+        var result = await _context.SaveChangesAsync(cancellationToken);
         response.DeletedBudget = result != default;
-        logger.LogInformation(response, $"Create category item successful");
+        _logger.LogInformation(response, $"Create category item successful");
         return response;
     }
 
@@ -35,7 +36,7 @@ public class BudgetService(
         ListBudgetResponse response = new(request.CorrelationId());
         var entities = await _context.Budgets.ToListAsync();
         response.Budgets = entities;
-        logger.LogInformation(response, $"Create category item successful");
+        _logger.LogInformation(response, $"Create category item successful");
         return response;
     }
 
@@ -43,9 +44,9 @@ public class BudgetService(
     {
         UpdateBudgetResponse response = new(request.CorrelationId());
         var entity = _context.Budgets.Update(request.Budget);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.BudgetUpdated = entity.Entity;
-        logger.LogInformation(response, $"Create category item successful");
+        _logger.LogInformation(response, $"Create category item successful");
         return response;
     }
 }

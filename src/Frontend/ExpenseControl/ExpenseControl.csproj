@@ -7,6 +7,16 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Blazor" Version="24.2.*" />
+    <PackageReference Include="OpenIddict.Client.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="OpenIddict.Validation.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="OpenIddict.Validation.SystemNetHttp" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks\Loggers\Loggers.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\Entities\Entities.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\ServiceDefaults\ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\BuildingBlocks\CQRS\CQRS.csproj" />
   </ItemGroup>
 
 </Project>

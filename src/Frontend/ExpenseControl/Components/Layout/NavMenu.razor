@@ -1,9 +1,22 @@
-﻿﻿﻿<div>
-    <DxMenu Orientation="@Orientation.Vertical" CssClass="menu">
+﻿﻿<div>
+    <DxMenu Orientation="@Orientation.Vertical" CssClass="menu" DisplayMode="@MenuDisplayMode.Auto"
+        CollapseItemsToHamburgerMenu="true" DropDownActionMode="MenuDropDownActionMode.Click"
+        CollapseItemToIconMode="MenuCollapseItemToIconMode.All" SubMenuCssClass="menu-dropdown">
         <Items>
             <DxMenuItem NavigateUrl="/" Text="Home" CssClass="menu-item" IconCssClass="icon home-icon"></DxMenuItem>
+            <DxMenuItem NavigateUrl="/create-user" Text="Create User" CssClass="menu-item" IconCssClass="icon counter-icon"></DxMenuItem>
             <DxMenuItem NavigateUrl="/counter" Text="Counter" CssClass="menu-item" IconCssClass="icon counter-icon"></DxMenuItem>
-            <DxMenuItem NavigateUrl="/weather" Text="Weather" CssClass="menu-item" IconCssClass="icon weather-icon"></DxMenuItem>                                    
+            <DxMenuItem NavigateUrl="/weather" Text="Weather" CssClass="menu-item" IconCssClass="icon weather-icon"></DxMenuItem>
+            <DxMenuItem NavigateUrl="/category/list" Text="Categories" CssClass="menu-item" IconCssClass="icon weather-icon"></DxMenuItem>
+            <DxMenuItem NavigateUrl="/budget/list" Text="Budgets" CssClass="menu-item" IconCssClass="icon counter-icon"></DxMenuItem>
+            <DxMenuItem Text="Support" CssClass="menu-item" IconCssClass="icon counter-icon">
+                <Items>
+            <DxMenuItem NavigateUrl="/budget/list" Text="Budgetss" CssClass="menu-item" IconCssClass="icon counter-icon"></DxMenuItem>
+            <DxMenuItem NavigateUrl="/category/list" Text="Categories" CssClass="menu-item" IconCssClass="icon counter-icon"></DxMenuItem>
+
+                </Items>
+            </DxMenuItem>
+
         </Items>
     </DxMenu>
 </div>

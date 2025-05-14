@@ -39,6 +39,7 @@ identityApi
 .WithReference(expenceControlWeb)
 .WithEnvironment(Identity__Url, identityEndpoint)
 .WithEnvironment("ExpenseControlEndpoint", expenceControlApi.GetEndpoint(launchProfileName))
+.WithEnvironment("ExpenseControlWeb", expenceControlWeb.GetEndpoint(launchProfileName))
 .WaitFor(IdentityDb);
 
 builder.Build().Run();

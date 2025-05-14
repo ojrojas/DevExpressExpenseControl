@@ -12,9 +12,9 @@ public class CategoryService(
     {
         CreateCategoryResponse response = new(request.CorrelationId());
         var entity = await _context.Categories.AddAsync(request.Category);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.CategoryCreated = entity.Entity;
-        logger.LogInformation(response, $"Create category item successful");
+        _logger.LogInformation(response, $"Create category item successful");
         return response;
     }
 
@@ -23,10 +23,11 @@ public class CategoryService(
         DeleteCategoryResponse response = new(request.CorrelationId());
 
         var entity = await _context.Categories.FindAsync(new object[] { request.Id }, cancellationToken);
-        context.Categories.Remove(entity);
-        var result = await context.SaveChangesAsync(cancellationToken);
+        ArgumentNullException.ThrowIfNull(entity);
+        _context.Categories.Remove(entity);
+        var result = await _context.SaveChangesAsync(cancellationToken);
         response.CategoryDeleted = result > 0;
-        logger.LogInformation(response, $"Delete category item successful");
+        _logger.LogInformation(response, $"Delete category item successful");
         return response;
     }
 
@@ -35,7 +36,7 @@ public class CategoryService(
          ListCategoryResponse response = new(request.CorrelationId());
         var entities = await _context.Categories.ToListAsync();
         response.Categories = entities;
-        logger.LogInformation(response, $"Get categories items successful");
+        _logger.LogInformation(response, $"Get categories items successful");
         return response;
     }
 
@@ -43,9 +44,9 @@ public class CategoryService(
     {
          UpdateCategoryResponse response = new(request.CorrelationId());
         var entity = _context.Categories.Update(request.Category);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.CategoryUpdate = entity.Entity;
-        logger.LogInformation(response, $"Create category item successful");
+        _logger.LogInformation(response, $"Create category item successful");
         return response;
     }
 }

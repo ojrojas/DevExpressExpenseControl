@@ -14,7 +14,7 @@ public class WalletService(
         var entity = await _context.Wallets.AddAsync(request.Wallet);
         await context.SaveChangesAsync(cancellationToken);
         response.WalletCreated = entity.Entity;
-        logger.LogInformation(response, "Create wallet item successful");
+        _logger.LogInformation(response, "Create wallet item successful");
         return response;
     }
 
@@ -25,9 +25,9 @@ public class WalletService(
         ArgumentNullException.ThrowIfNull(entity);
         entity.State = false;
         var result = _context.Wallets.Update(entity);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.DeactivedWallet = result.Entity.State;
-        logger.LogInformation(response, "Deactive wallet item successful");
+        _logger.LogInformation(response, "Deactive wallet item successful");
         return response;
     }
 
@@ -35,8 +35,9 @@ public class WalletService(
     {
         GetWalletByUserIdResponse response = new(request.CorrelationId());
         var entity = await _context.Wallets.FirstOrDefaultAsync(w => w.UserId.Equals(request.Id));
+        ArgumentNullException.ThrowIfNull(entity);
         response.Wallet = entity;
-        logger.LogInformation(response, "Get wallet by user id item successful");
+        _logger.LogInformation(response, "Get wallet by user id item successful");
         return response;
     }
 
@@ -48,9 +49,9 @@ public class WalletService(
         entity.Name = request.Wallet.Name;
         entity.State = request.Wallet.State;
         var result = _context.Wallets.Update(entity);
-        await context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
         response.WalletUpdated = result.Entity;
-        logger.LogInformation(response, "Deactive wallet item successful");
+        _logger.LogInformation(response, "Deactive wallet item successful");
         return response;
     }
 }
