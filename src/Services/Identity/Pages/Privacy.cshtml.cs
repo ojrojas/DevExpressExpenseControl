@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-namespace DevExpressExpenseControl.Services.Identity.Pages;
+﻿namespace DevExpressExpenseControl.Services.Identity.Pages;
 
 [Authorize]
 public class PrivacyModel : PageModel
