@@ -35,16 +35,6 @@ public class SeedIdentity(
                 Name = "CC",
             },
             IdentificationTypeId = TYPE_IDENTIFICATION_ID,
-            Card = new Card
-            {
-                Id = CARD_ID,
-                Number = "XXXXXXXXXXXX1080",
-                CardType = CardType.Credit,
-                ExpirationDate = DateTime.UtcNow.AddMonths(6),
-                CreatedBy = USER_APPLICATION_ID,
-                CreatedDate = DateTime.UtcNow
-            },
-            CardId = CARD_ID,
             UserName = "pepe@example.com",
         };
     }
@@ -161,8 +151,9 @@ public class SeedIdentity(
             {
                 ApplicationType = ApplicationTypes.Web,
                 ClientId = "expensecontrol_web",
-                ClientType = ClientTypes.Public,
-                DisplayName = "Expense Control Client Swagger",
+                ClientType = ClientTypes.Confidential,
+                ClientSecret = "9aa02a96-111b-4385-959b-e7441a202de3",
+                DisplayName = "Expense Control Client Web",
                 RedirectUris = { new Uri($"{configuration["ExpenseControlWeb"]}/swagger/oauth2-redirect.html") },
                 Permissions = {
                         Permissions.Endpoints.Token,

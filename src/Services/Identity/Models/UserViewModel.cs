@@ -13,8 +13,6 @@ public record UserViewModel
     public DateTime BirthDate { get; set; }
     public required string Address { get; set; }
     public required string Contact { get; set; }
-    public Card? Card { get; set; }
-    public Guid CardId { get; set; }
 }
 
 public record SecurityRegistryUser

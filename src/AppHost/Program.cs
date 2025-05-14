@@ -15,10 +15,13 @@ var IdentityDb = mssql.AddDatabase("identitydb");
 var expenceControlDb = mssql.AddDatabase("expencecontrolDB");
 
 var expenceControlWeb = builder.AddProject<Projects.ExpenseControl>("expense-control-web", launchProfileName);
+var expenseControlExtreme = builder.AddNpmApp("expense-control", "../Frontend/expense-control");
 var identityApi = builder.AddProject<Projects.Identity>("expence-control-identity", launchProfileName);
 var expenceControlApi = builder.AddProject<Projects.ExpenseControlApi>("expence-control-api", launchProfileName);
+var notifications = builder.AddProject<Projects.Notifications>("notifications",launchProfileName);
 
 var identityEndpoint = identityApi.GetEndpoint(launchProfileName);
+var expenseControlWebUrl = expenceControlWeb.GetEndpoint(launchProfileName);
 
 expenceControlApi
 .WithReference(expenceControlDb)
@@ -26,10 +29,20 @@ expenceControlApi
 .WithEnvironment(Identity__Url, identityEndpoint)
 .WaitFor(identityApi);
 
+expenseControlExtreme
+.WithReference(identityApi)
+.WithReference(expenceControlApi)
+.WithReference(seq)
+.WithReference(notifications)
+.WithHttpEndpoint(env: "PORT")
+.WithExternalHttpEndpoints()
+.PublishAsDockerFile();
+
 expenceControlWeb.WithExternalHttpEndpoints()
 .WithReference(seq)
 .WithReference(expenceControlApi)
 .WithEnvironment(Identity__Url, identityEndpoint)
+.WithEnvironment("ExpenseControlWeb", expenseControlWebUrl)
 .WaitFor(expenceControlApi);
 
 identityApi
@@ -39,7 +52,7 @@ identityApi
 .WithReference(expenceControlWeb)
 .WithEnvironment(Identity__Url, identityEndpoint)
 .WithEnvironment("ExpenseControlEndpoint", expenceControlApi.GetEndpoint(launchProfileName))
-.WithEnvironment("ExpenseControlWeb", expenceControlWeb.GetEndpoint(launchProfileName))
+.WithEnvironment("ExpenseControlWeb", expenseControlWebUrl)
 .WaitFor(IdentityDb);
 
 builder.Build().Run();

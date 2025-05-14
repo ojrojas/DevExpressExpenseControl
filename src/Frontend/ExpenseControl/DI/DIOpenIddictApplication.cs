@@ -6,26 +6,25 @@ public static class DIOpenIddictApplication
 {
     public static IServiceCollection AddDIOpenIddictApplication(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddOpenIddict()
-            .AddValidation(config =>
-            {
-                config.SetIssuer($"{configuration["Identity:Url"]}/");
-                config.AddAudiences("expensecontrol_api");
+        services.AddOidcAuthentication(options =>
+        {
+            options.ProviderOptions.ClientId = "expensecontrol_web";
+            options.ProviderOptions.Authority = $"{configuration["Identity:Url"]}/";
+            options.ProviderOptions.ResponseType = "code";
 
-                config.UseIntrospection()
-                .SetClientId("expensecontrol_api")
-                .SetClientSecret("a2344152-e928-49e7-bb3c-ee54acc96c8c");
+            // Note: response_mode=fragment is the best option for a SPA. Unfortunately, the Blazor WASM
+            // authentication stack is impacted by a bug that prevents it from correctly extracting
+            // authorization error responses (e.g error=access_denied responses) from the URL fragment.
+            // For more information about this bug, visit https://github.com/dotnet/aspnetcore/issues/28344.
+            //
+            options.ProviderOptions.ResponseMode = "query";
 
-                config.AddEncryptionKey(
-                    new SymmetricSecurityKey(
-                        Convert.FromBase64String("U3BvY2lmeTNkOWMyNzhiLTgyZDEtNGI4OC05NDRjLTg=")));
-
-                // Register the System.Net.Http integration.
-                config.UseSystemNetHttp();
-
-                // Register the ASP.NET Core host.
-                config.UseAspNetCore();
-            });
+            // Add the "roles" (OpenIddictConstants.Scopes.Roles) scope and the "role" (OpenIddictConstants.Claims.Role) claim
+            // (the same ones used in the Startup class of the Server) in order for the roles to be validated.
+            // See the Counter component for an example of how to use the Authorize attribute with roles
+            options.ProviderOptions.DefaultScopes.Add("roles");
+            options.UserOptions.RoleClaim = "role";
+        });
 
         return services;
     }

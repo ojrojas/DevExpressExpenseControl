@@ -10,20 +10,20 @@
         <Items>
             <DxGridLayoutItem Area="header" CssClass="title">
                 <Template>
-                    <div class="title-header-text">Hello World!</div>
-                    <div class="title-content-text">Welcome to your new DevExpress Blazor Application</div>
+                    <div class="title-header-text">Expense Control!</div>
+                    <div class="title-content-text">Welcome to your new DevExpress Expense Control Blazor Application</div>
                 </Template>
             </DxGridLayoutItem>
             <DxGridLayoutItem Area="cards" CssClass="welcome-cards">
                 <Template>
-                    <NavLink class="welcome-card" href="@UrlGenerator.GetUrl("/counter", ToggledSidebar)">
-                        <svg class="welcome-card-img" alt="counter card">
+                    <NavLink class="welcome-card" href="@UrlGenerator.GetUrl("localhost:5022/Account/Login?ReturnUrl=http://localhost:5001/InfoUser", ToggledSidebar)">
+                        <svg class="welcome-card-img" alt="login card">
                             <use href="images/cards.svg#counter"></use>
                         </svg>
-                        <div class="welcome-card-text">Counter</div>
+                        <div class="welcome-card-text">Login</div>
                         <div class="welcome-card-back"></div>
                     </NavLink>
-                    <NavLink class="welcome-card" href="@UrlGenerator.GetUrl("/weather", ToggledSidebar)">
+                    <NavLink class="welcome-card" href="@UrlGenerator.GetUrl("/create-user", ToggledSidebar)">
                         <svg class="welcome-card-img" alt="weather card">
                             <use href="images/cards.svg#weather"></use>
                         </svg>
@@ -39,4 +39,7 @@
 @code {
     [SupplyParameterFromQuery(Name = UrlGenerator.ToggleSidebarName)]
     public bool ToggledSidebar { get; set; }
+    protected override void  OnInitialized()
+    {
+    }
 }

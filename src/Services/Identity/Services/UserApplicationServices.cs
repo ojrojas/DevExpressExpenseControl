@@ -268,9 +268,7 @@ public class UserApplicationServices : IUserApplicationServices
             IdentificationNumber = userViewModel.IdentificationNumber,
             BirthDate = userViewModel.BirthDate,
             Address = userViewModel.Address,
-            Contact = userViewModel.Contact,
-            Card = userViewModel.Card,
-            CardId = userViewModel.CardId
+            Contact = userViewModel.Contact
         };
     }
 
@@ -289,9 +287,7 @@ public class UserApplicationServices : IUserApplicationServices
             IdentificationNumber = userApplication.IdentificationNumber,
             BirthDate = userApplication.BirthDate,
             Address = userApplication.Address,
-            Contact = userApplication.Contact,
-            Card = userApplication.Card,
-            CardId = userApplication.CardId
+            Contact = userApplication.Contact
         };
     }
 }

@@ -15,6 +15,8 @@ internal static class Extensions
         builder.AddServicesWritersLogger();
 
         services.AddAuthentication(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+        services.AddCascadingAuthenticationState();
+        services.AddAuthenticationStateDeserialization();
         services.AddAuthorization();
 
         IdentityModelEventSource.ShowPII = true;

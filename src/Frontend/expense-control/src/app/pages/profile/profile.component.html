@@ -1,0 +1,17 @@
+<h2>Create User</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-form id="form"
+    labelLocation="top"
+    [colCountByScreen]="colCountByScreen">
+    <dxi-item dataField="name" isRequired="true"></dxi-item>
+    <dxi-item dataField="middleName"></dxi-item>
+    <dxi-item dataField="lastName" isRequired="true"></dxi-item>
+    <dxi-item dataField="surName"></dxi-item>
+    <dx-select-box dataField="identificationTypeId" isRequired="true"></dx-select-box>
+    <dxi-item dataField="identificationNumber" isRequired="true"></dxi-item>
+    <dxi-item dataField="birthDate" isRequired="true"></dxi-item>
+    <dxi-item dataField="address" isRequired="true"></dxi-item>
+    <dxi-item dataField="contact" isRequired="true"></dxi-item>
+  </dx-form>
+</div>

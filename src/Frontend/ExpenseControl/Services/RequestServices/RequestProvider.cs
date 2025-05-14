@@ -2,7 +2,6 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using DevExpressExpenseControl.Frontend.ExpenseControl.Exceptions;
-using Google.Protobuf;
 
 namespace DevExpressExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
 

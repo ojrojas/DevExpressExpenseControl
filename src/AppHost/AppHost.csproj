@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.1" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.2.1" />
     <PackageReference Include="Aspire.Hosting.Seq" Version="9.2.1" />
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.2.1" />
   </ItemGroup>
@@ -20,6 +21,18 @@
     <ProjectReference Include="..\Frontend\ExpenseControl\ExpenseControl.csproj" />
     <ProjectReference Include="..\Services\Identity\Identity.csproj" />
     <ProjectReference Include="..\Services\ExpenseControlApi\ExpenseControlApi.csproj" />
+    <ProjectReference Include="..\Services\Notifications\Notifications.csproj" />
   </ItemGroup>
+
+   <Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">
+    <ItemGroup>
+      <PackageJsons Include="..\Frontend\*\package.json" />
+    </ItemGroup>
+
+    <!-- Install npm packages if node_modules is missing -->
+    <Message Importance="Normal" Text="Installing npm packages for %(PackageJsons.RelativeDir)" Condition="!Exists('%(PackageJsons.RootDir)%(PackageJsons.Directory)/node_modules')" />
+    <Exec Command="npm install" WorkingDirectory="%(PackageJsons.RootDir)%(PackageJsons.Directory)" Condition="!Exists('%(PackageJsons.RootDir)%(PackageJsons.Directory)/node_modules')" />
+  </Target>
+
 
 </Project>

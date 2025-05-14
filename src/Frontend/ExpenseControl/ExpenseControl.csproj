@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Blazor" Version="24.2.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.5" />
     <PackageReference Include="OpenIddict.Client.AspNetCore" Version="6.0.0" />
     <PackageReference Include="OpenIddict.Validation.AspNetCore" Version="6.0.0" />
     <PackageReference Include="OpenIddict.Validation.SystemNetHttp" Version="6.0.0" />
