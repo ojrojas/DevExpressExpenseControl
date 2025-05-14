@@ -1,0 +1,23 @@
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Exceptions;
+global using Microsoft.EntityFrameworkCore;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Models;
+global using System.Reflection;
+global using System.Runtime.Serialization;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Interfaces;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Services;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Dtos;
+global using Microsoft.AspNetCore.Http.HttpResults;
+global using Microsoft.IdentityModel.Tokens;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Apis;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.Data;
+global using Microsoft.IdentityModel.Logging;
+global using OpenIddict.Validation.AspNetCore;
+global using DevExpressExpenseControl.Services.ExpenseControlApi.DI;
+global using Microsoft.AspNetCore.Mvc;
+global using Serilog;
+global using DevExpressExpenseControl.BuildingBlocks.CQRS;
+global using DevExpressExpenseControl.BuildingBlocks.Entities;
+global using DevExpressExpenseControl.BuildingBlocks.Loggers;
+global using DevExpressExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
+global using DevExpressExpenseControl.Services.Catalogs.Data;
+

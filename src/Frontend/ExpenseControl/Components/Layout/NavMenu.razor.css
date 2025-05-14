@@ -1,0 +1,48 @@
+﻿::deep .menu.display-mobile {
+    margin-bottom: 2rem;
+}
+
+::deep .menu {
+    background-color: inherit;
+}
+
+::deep .menu .dxbl-menu-item-list {
+    gap: 0.5rem;
+}
+
+::deep .menu-item {
+    color: var(--bs-white);
+}
+
+::deep .icon {
+    width: 1rem;
+    height: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 0.5rem;
+}
+
+::deep .home-icon {
+    background-image: url("images/home.svg");
+}
+
+::deep .weather-icon {
+    background-image: url("images/weather.svg");
+}
+
+::deep .counter-icon {
+    background-image: url("images/counter.svg");
+}
+
+
+@media (max-width: 768px) {
+    #sidebar {
+        min-width: inherit;
+        max-width: inherit;
+        display: block;
+    }
+
+    .logo {
+        text-align: inherit;
+    }
+}
