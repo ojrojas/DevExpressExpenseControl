@@ -68,7 +68,7 @@
     },
     "expensecontrol": {
       "type": "dockerfile.v0",
-      "path": "../Frontend/bolunder-control/Dockerfile",
+      "path": "../Frontend/expense-control/Dockerfile",
       "context": "../Frontend/expence-control",
       "env": {
         "NODE_ENV": "production",
