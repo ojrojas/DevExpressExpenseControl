@@ -65,30 +65,31 @@
           "transport": "http"
         }
       }
-    },
-    "expensecontrol": {
-      "type": "dockerfile.v0",
-      "path": "../Frontend/expense-control/Dockerfile",
-      "context": "../Frontend/expence-control",
-      "env": {
-        "NODE_ENV": "production",
-        "services__identity__http__0": "{identity.bindings.http.url}",
-        "services__identity__https__0": "{identity.bindings.https.url}",
-        "services__expensecontrolapi__http__0": "{expensecontrolapi.bindings.http.url}",
-        "services__expensecontrolapi__https__0": "{expensecontrolapi.bindings.https.url}",
-        "services__notificationsapi__http__0": "{notificationsapi.bindings.http.url}",
-        "services__notificationsapi__https__0": "{notificationsapi.bindings.https.url}",
-        "PORT": "{expensecontrol.bindings.http.targetPort}"
-      },
-      "bindings": {
-        "http": {
-          "scheme": "http",
-          "protocol": "tcp",
-          "transport": "http",
-          "targetPort": 8000,
-          "external": true
-        }
-      }
     }
+    //,
+    // "expensecontrol": {
+    //   "type": "dockerfile.v0",
+    //   "path": "../Frontend/expense-control/Dockerfile",
+    //   "context": "../Frontend/expence-control",
+    //   "env": {
+    //     "NODE_ENV": "production",
+    //     "services__identity__http__0": "{identity.bindings.http.url}",
+    //     "services__identity__https__0": "{identity.bindings.https.url}",
+    //     "services__expensecontrolapi__http__0": "{expensecontrolapi.bindings.http.url}",
+    //     "services__expensecontrolapi__https__0": "{expensecontrolapi.bindings.https.url}",
+    //     "services__notificationsapi__http__0": "{notificationsapi.bindings.http.url}",
+    //     "services__notificationsapi__https__0": "{notificationsapi.bindings.https.url}",
+    //     "PORT": "{expensecontrol.bindings.http.targetPort}"
+    //   },
+    //   "bindings": {
+    //     "http": {
+    //       "scheme": "http",
+    //       "protocol": "tcp",
+    //       "transport": "http",
+    //       "targetPort": 8000,
+    //       "external": true
+    //     }
+    //   }
+    // }
   }
 }
