@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Models;
+namespace ExpenseControl.Frontend.ExpenseControl.Models;
 
 public class User
 {

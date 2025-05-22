@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Exceptions;
+namespace ExpenseControl.Services.ExpenseControlApi.Exceptions;
 
 public class WalletNotAvailableException : Exception
 {

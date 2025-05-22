@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Models;
+namespace ExpenseControl.Services.ExpenseControlApi.Models;
 
 public class User
 {

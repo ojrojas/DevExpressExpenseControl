@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.DI;
+namespace ExpenseControl.Services.Identity.DI;
 
 internal static class Extensions
 {

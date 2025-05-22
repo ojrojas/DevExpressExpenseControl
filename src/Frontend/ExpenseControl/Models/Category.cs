@@ -1,6 +1,6 @@
-using DevExpressExpenseControl.BuildingBlocks.Entities;
+using ExpenseControl.BuildingBlocks.Entities;
 
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Models;
+namespace ExpenseControl.Frontend.ExpenseControl.Models;
 
 
 public class Category : BaseEntity

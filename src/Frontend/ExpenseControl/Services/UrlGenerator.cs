@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace DevExpressExpenseControl.Frontend.ExpenseControl;
+namespace ExpenseControl.Frontend.ExpenseControl;
 
 public static class UrlGenerator {
     public const string ToggleSidebarName = "toggledSidebar";

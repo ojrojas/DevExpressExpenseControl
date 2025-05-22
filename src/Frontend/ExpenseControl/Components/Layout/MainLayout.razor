@@ -1,4 +1,4 @@
-﻿@namespace DevExpressExpenseControl.Frontend.ExpenseControl.Components.Layout
+﻿@namespace ExpenseControl.Frontend.ExpenseControl.Components.Layout
 
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
@@ -33,17 +33,17 @@
     public bool ToggledSidebar { get; set; }
 
     private RenderFragment drawerHeader => @<div class="navigation-drawer-header">
-        <img class="logo" src="images/logo.svg" alt="DevExpress logo" />
+        <img class="logo" src="images/logo.svg" alt=" logo" />
         <NavLink href="@UrlGenerator.GetUrl(new Uri(NavigationManager.Uri).LocalPath, !ToggledSidebar)">
             <DxButton RenderStyle="@ButtonRenderStyle.Light" RenderStyleMode="@ButtonRenderStyleMode.Text" CssClass="menu-button-nav" IconCssClass="@(ToggledSidebar ? "icon icon-close" : "icon icon-menu")"></DxButton>
         </NavLink>
     </div>;
 
     private RenderFragment drawerFooter => @<div>
-        <NavLink href="https://docs.devexpress.com/Blazor/400725/blazor-components" class="button-link">
+        <NavLink href="https://docs..com/Blazor/400725/blazor-components" class="button-link">
             <DxButton Text="Docs" RenderStyleMode="@ButtonRenderStyleMode.Text" CssClass="footer-button" RenderStyle="@ButtonRenderStyle.Light" IconCssClass="icon docs-icon"></DxButton>
         </NavLink>
-        <NavLink href="https://demos.devexpress.com/blazor/" class="button-link">
+        <NavLink href="https://demos..com/blazor/" class="button-link">
             <DxButton Text="Demos" RenderStyleMode="@ButtonRenderStyleMode.Text" CssClass="footer-button" RenderStyle="@ButtonRenderStyle.Light" IconCssClass="icon demos-icon"></DxButton>
         </NavLink>
     </div>;

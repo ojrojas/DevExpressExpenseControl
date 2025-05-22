@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Services
+namespace ExpenseControl.Frontend.ExpenseControl.Services
 {
     public class WeatherForecast
     {

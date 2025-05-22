@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.BuildingBlocks.Loggers;
+namespace ExpenseControl.BuildingBlocks.Loggers;
 
 public class LoggerApplicationService<T> : ILoggerApplicationService<T>
 {

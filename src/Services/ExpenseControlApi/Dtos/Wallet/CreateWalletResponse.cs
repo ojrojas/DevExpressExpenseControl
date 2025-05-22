@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Dtos;
+namespace ExpenseControl.Services.ExpenseControlApi.Dtos;
 
 public record CreateWalletResponse(Guid correlationId) : BaseResponse(correlationId)
 {

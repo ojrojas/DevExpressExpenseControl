@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Catalogs.Data;
+namespace ExpenseControl.Services.Catalogs.Data;
 
 public class ExpenseControlSeed(ExpenseControlDbContext context)
 {

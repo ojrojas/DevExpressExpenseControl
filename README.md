@@ -1,6 +1,6 @@
-# DevExpressExpenseControl
+# ExpenseControl
 
-Este es un proyecto web desarrollado utilizando Microsoft .NetCore,SQL Server, DevExpress, DevExtreme y OpenIddict con la integración de los componentes de una interfaz gráfica atractiva y segura.
+Este es un proyecto web desarrollado utilizando Microsoft .NetCore,SQL Server, , DevExtreme y OpenIddict con la integración de los componentes de una interfaz gráfica atractiva y segura.
 
 ## Descripción del Proyecto
 
@@ -25,7 +25,7 @@ El objetivo principal del portal es permitir que varias personas registradas pue
 
 - **Microsoft .NetCore**: Para el desarrollo del backend de la aplicación.
 - **SQL Server**: Base de datos utilizada para almacenar los datos.
-- **DevExpress**: Componentes de WPF y ASP.NET que se integrarán en el proyecto para la interfaz gráfica.
+- ****: Componentes de WPF y ASP.NET que se integrarán en el proyecto para la interfaz gráfica.
 
 ## Instalación
 
@@ -41,7 +41,7 @@ El objetivo principal del portal es permitir que varias personas registradas pue
 2. **Funciones Clave**:
    - Registro de usuarios, gestión de fondos monetarios y movimientos.
 3. **Tecnologías**:
-   - Microsoft .NetCore, SQL Server, DevExpress.
+   - Microsoft .NetCore, SQL Server, .
 4. **Estructura de Carpetas**:
    - Proyecto principal: `WebPortalControlGastos`
      - Controllers: Controladores principales del proyecto.
@@ -51,7 +51,7 @@ El objetivo principal del portal es permitir que varias personas registradas pue
 
 ## Conclusión
 
-Este portal web proporciona una solución completa para gestionar gastos individuales de manera eficiente. Utilizando .NetCore, SQL Server y DevExpress, se ha logrado crear una aplicación robusta que cumple con las expectativas del cliente.
+Este portal web proporciona una solución completa para gestionar gastos individuales de manera eficiente. Utilizando .NetCore, SQL Server y , se ha logrado crear una aplicación robusta que cumple con las expectativas del cliente.
 
 ---
 
@@ -59,7 +59,7 @@ Este portal web proporciona una solución completa para gestionar gastos individ
 
 - [Microsoft .NetCore Documentation](https://docs.microsoft.com/en-us/dotnet/framework/)
 - [SQL Server Documentation](https://docs.microsoft.com/en-us/sql/sql-server/)
-- [DevExpress Documentation](https://www.devexpress.com/products/net/)
+- [ Documentation](https://www..com/products/net/)
 
 ---
 

@@ -1,5 +1,5 @@
 
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Services;
+namespace ExpenseControl.Services.ExpenseControlApi.Services;
 
 public class BudgetService(
     ILoggerApplicationService<BudgetService> logger,

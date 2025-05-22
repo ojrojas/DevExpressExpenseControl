@@ -1,7 +1,7 @@
 
 
 
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Apis;
+namespace ExpenseControl.Services.ExpenseControlApi.Apis;
 
 public static class CategoryEndpoints
 {

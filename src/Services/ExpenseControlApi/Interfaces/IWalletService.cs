@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Interfaces;
+namespace ExpenseControl.Services.ExpenseControlApi.Interfaces;
 
 public interface IWalletService
 {

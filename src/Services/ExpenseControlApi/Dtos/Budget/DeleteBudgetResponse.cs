@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Dtos;
+namespace ExpenseControl.Services.ExpenseControlApi.Dtos;
 
 public record DeleteBudgetResponse(Guid correlationId) : BaseResponse(correlationId)
 {

@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.DI;
+namespace ExpenseControl.Services.ExpenseControlApi.DI;
 
 public static class DIOpenIddictApplication
 {

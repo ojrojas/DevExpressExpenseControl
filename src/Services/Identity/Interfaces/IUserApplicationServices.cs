@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Interfaces;
+namespace ExpenseControl.Services.Identity.Interfaces;
 
 public interface IUserApplicationServices
 {

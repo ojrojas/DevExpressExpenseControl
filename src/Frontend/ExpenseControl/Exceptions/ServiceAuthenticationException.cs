@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Exceptions;
+namespace ExpenseControl.Frontend.ExpenseControl.Exceptions;
 
 public class ServiceAuthenticationException : Exception
 {

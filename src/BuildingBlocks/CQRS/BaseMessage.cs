@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.BuildingBlocks.CQRS;
+namespace ExpenseControl.BuildingBlocks.CQRS;
 
 public record BaseMessage
 {

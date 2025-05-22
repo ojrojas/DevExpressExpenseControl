@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Models;
+namespace ExpenseControl.Services.Identity.Models;
 
 public record UserViewModel
 {

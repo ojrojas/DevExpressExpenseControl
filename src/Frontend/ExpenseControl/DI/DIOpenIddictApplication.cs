@@ -1,6 +1,6 @@
 using Microsoft.IdentityModel.Tokens;
 
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.DI;
+namespace ExpenseControl.Frontend.ExpenseControl.DI;
 
 public static class DIOpenIddictApplication
 {

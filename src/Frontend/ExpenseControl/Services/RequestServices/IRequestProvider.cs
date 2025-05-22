@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
+namespace ExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
 
 public interface IRequestProvider
 {

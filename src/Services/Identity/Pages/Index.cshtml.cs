@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Pages;
+namespace ExpenseControl.Services.Identity.Pages;
 
 public class IndexModel : PageModel
 {

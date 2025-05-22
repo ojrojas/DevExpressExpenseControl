@@ -17,7 +17,7 @@ export class TasksComponent {
         version: 2,
         type: 'odata',
         key: 'Task_ID',
-        url: 'https://js.devexpress.com/Demos/DevAV/odata/Tasks'
+        url: 'https://js..com/Demos/DevAV/odata/Tasks'
       },
       expand: 'ResponsibleEmployee',
       select: [

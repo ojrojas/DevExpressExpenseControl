@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Services;
+namespace ExpenseControl.Services.ExpenseControlApi.Services;
 
 public class CategoryService(
     ILoggerApplicationService<CategoryService> logger,

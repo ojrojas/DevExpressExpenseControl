@@ -1,7 +1,7 @@
-﻿using DevExpressExpenseControl.Frontend.ExpenseControl.Services;
-using DevExpressExpenseControl.Frontend.ExpenseControl.Components;
-using DevExpressExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
-using DevExpressExpenseControl.Frontend.ExpenseControl.DI;
+﻿using ExpenseControl.Frontend.ExpenseControl.Services;
+using ExpenseControl.Frontend.ExpenseControl.Components;
+using ExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
+using ExpenseControl.Frontend.ExpenseControl.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = builder.Configuration;
@@ -10,9 +10,9 @@ IConfiguration configuration = builder.Configuration;
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddDevExpressBlazor(options =>
+builder.Services.AddBlazor(options =>
 {
-    options.BootstrapVersion = DevExpress.Blazor.BootstrapVersion.v5;
+    options.BootstrapVersion = .Blazor.BootstrapVersion.v5;
 });
 
 builder.Services.AddRazorPages(config =>

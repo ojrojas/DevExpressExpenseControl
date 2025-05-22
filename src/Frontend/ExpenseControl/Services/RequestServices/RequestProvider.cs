@@ -1,9 +1,9 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using DevExpressExpenseControl.Frontend.ExpenseControl.Exceptions;
+using ExpenseControl.Frontend.ExpenseControl.Exceptions;
 
-namespace DevExpressExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
+namespace ExpenseControl.Frontend.ExpenseControl.Services.RequestServices;
 
 public class RequestProvider(HttpMessageHandler _messageHandler) : IRequestProvider
 {

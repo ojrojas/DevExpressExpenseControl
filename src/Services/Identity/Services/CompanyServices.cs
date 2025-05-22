@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Services;
+namespace ExpenseControl.Services.Identity.Services;
 
 public class CompanyService : ICompanyService
 {

@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace DevExpressExpenseControl.Services.Identity.Pages;
+namespace ExpenseControl.Services.Identity.Pages;
 
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 [IgnoreAntiforgeryToken]

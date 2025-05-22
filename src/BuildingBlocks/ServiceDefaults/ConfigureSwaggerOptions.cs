@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
+namespace ExpenseControl.BuildingBlocks.ServiceDefaults.Extensions;
 
 internal sealed class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
 {

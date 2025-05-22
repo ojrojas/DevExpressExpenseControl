@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Apis;
+namespace ExpenseControl.Services.Identity.Apis;
 
 public static class UserApplicationEndpoints
 {

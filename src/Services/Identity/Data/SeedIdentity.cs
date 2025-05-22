@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Data;
+namespace ExpenseControl.Services.Identity.Data;
 
 public class SeedIdentity(
     ILoggerApplicationService<SeedIdentity> logger,

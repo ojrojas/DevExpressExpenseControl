@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.Identity.Data;
+namespace ExpenseControl.Services.Identity.Data;
 
 public class IdentityAppDbContext : IdentityDbContext<UserApplication, UserType, Guid>
 {

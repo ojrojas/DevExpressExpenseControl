@@ -1,4 +1,4 @@
-namespace DevExpressExpenseControl.Services.ExpenseControlApi.Data;
+namespace ExpenseControl.Services.ExpenseControlApi.Data;
 
 public static class ExpenseControlItemsSeed
 {

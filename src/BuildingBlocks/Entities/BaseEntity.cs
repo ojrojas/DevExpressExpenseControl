@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DevExpressExpenseControl.BuildingBlocks.Entities;
+namespace ExpenseControl.BuildingBlocks.Entities;
 
 public class BaseEntity
 {
