@@ -1,6 +1,3 @@
-
-
-
 namespace ExpenseControl.Services.ExpenseControlApi.Apis;
 
 public static class CategoryEndpoints

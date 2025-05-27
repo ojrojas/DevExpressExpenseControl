@@ -15,13 +15,14 @@
     <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.2.1" />
     <PackageReference Include="Aspire.Hosting.Seq" Version="9.2.1" />
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.2.1" />
+    <PackageReference Include="OpenIddict.Validation.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Frontend\ExpenseControl\ExpenseControl.csproj" />
     <ProjectReference Include="..\Services\Identity\Identity.csproj" />
     <ProjectReference Include="..\Services\ExpenseControlApi\ExpenseControlApi.csproj" />
     <ProjectReference Include="..\Services\Notifications\Notifications.csproj" />
+    <ProjectReference Include="..\Frontend\ExpenseControlWeb\ExpenseControlWeb.csproj" />
   </ItemGroup>
 
 </Project>

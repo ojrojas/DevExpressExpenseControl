@@ -14,7 +14,7 @@ var seq = builder.AddSeq("seq");
 var IdentityDb = mssql.AddDatabase("identitydb");
 var expenceControlDb = mssql.AddDatabase("expencecontrolDB");
 
-var expenceControlWeb = builder.AddProject<Projects.ExpenseControl>("expense-control-web", launchProfileName);
+var expenceControlWeb = builder.AddProject<Projects.ExpenseControlWeb>("expense-control-web", launchProfileName);
 var identityApi = builder.AddProject<Projects.Identity>("expence-control-identity", launchProfileName);
 var expenceControlApi = builder.AddProject<Projects.ExpenseControlApi>("expence-control-api", launchProfileName);
 var notifications = builder.AddProject<Projects.Notifications>("notifications",launchProfileName);
